@@ -1,2 +1,2 @@
 # flask-http
-Test webserver for jenkins class. Thanks Tsahi!
+Test webserver for opsschool jenkins class. Thanks Tsahi!
