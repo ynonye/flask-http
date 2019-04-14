@@ -15,11 +15,11 @@ node('docker-slave-general') {
     sh "docker build --tag ${DockerImage} ."
   }
   
-  stage('Run') { // Push the image to repository
+  stage('Run') { // Run the built image
     sh "docker run -d --name webserver --rm -p 8081:5000 flask-ex:v1.0; sleep 5"
   }
   
-  stage('Run') { // Push the image to repository
+  stage('Test') { // Run tests on container
     def dockerOutput = sh (
         script: 'curl http://172.17.0.1:8081/goaway',
         returnStdout: true
