@@ -16,7 +16,7 @@ node('docker-slave-general') {
   }
   
   stage('Run') { // Run the built image
-    sh "docker run -d --name webserver --rm -p 8081:5000 flask-ex:v1.0; sleep 5"
+    sh "docker run -d --name webserver --rm -p 8081:5000 ${DockerImage}; sleep 5"
   }
   
   stage('Test') { // Run tests on container
